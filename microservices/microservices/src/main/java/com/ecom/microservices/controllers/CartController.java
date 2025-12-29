@@ -2,11 +2,14 @@ package com.ecom.microservices.controllers;
 
 
 import com.ecom.microservices.dto.CartItemRequest;
+import com.ecom.microservices.model.CartItem;
 import com.ecom.microservices.services.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/cart")
@@ -33,5 +36,12 @@ public class CartController {
         boolean deleted = cartService.deleteItemFromCart(userId,productId);
 
         return deleted ? ResponseEntity.noContent().build(): ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CartItem>> getCart  (
+            @RequestHeader("X-User-ID") String userId){
+
+      return ResponseEntity.ok(cartService.getCart(userId));
     }
 }
