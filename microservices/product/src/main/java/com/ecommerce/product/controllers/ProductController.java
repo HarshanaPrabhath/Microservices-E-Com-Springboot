@@ -24,7 +24,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @GetMapping
+    @GetMapping(path="/search")
     public ResponseEntity<List<ProductResponse>> getProducts(@RequestParam(required = false) String name) {
         if (name != null && !name.isEmpty()) {
             return ResponseEntity.ok(productService.getByKeyword(name));
