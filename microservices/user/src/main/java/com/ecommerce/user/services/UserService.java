@@ -31,7 +31,7 @@ public class UserService {
     }
 
     public UserResponse getUserById(Long id) {
-        return userRepository.findById(id)
+        return userRepository.findById(String.valueOf(id))
                 .map(user -> modelMapper.map(user, UserResponse.class))
                 .orElse(null);
     }
@@ -46,7 +46,7 @@ public class UserService {
     }
 
     public UserResponse updateUser(Long id, UserRequest userRequest) {
-        Optional<User> existingUserOpt = userRepository.findById(id);
+        Optional<User> existingUserOpt = userRepository.findById(String.valueOf(id));
 
         if (existingUserOpt.isEmpty()) {
             return null;
@@ -64,7 +64,7 @@ public class UserService {
     }
 
     public boolean deleteUser(Long id) {
-        Optional<User> user = userRepository.findById(id);
+        Optional<User> user = userRepository.findById(String.valueOf(id));
 
         if (user.isEmpty()) {
             return false;
