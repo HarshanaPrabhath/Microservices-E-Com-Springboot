@@ -11,6 +11,12 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 server:
   port: 8082
 
@@ -23,5 +29,5 @@ management:
 
 build:
   name: Harshana E-Commerce
-  configuration: order-service-dev.yml
+  configuration: order-service.yml
   version: 1.0.0

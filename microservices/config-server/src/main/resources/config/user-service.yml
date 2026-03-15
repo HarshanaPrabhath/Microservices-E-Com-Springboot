@@ -4,5 +4,17 @@ spring:
       uri: ${DB_URL}
       database: ${DB_NAME}
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 server:
   port: 8081
