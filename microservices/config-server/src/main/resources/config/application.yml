@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+company:
+  name: "Harshana E-Commerce"

@@ -1,4 +1,9 @@
-spring.application.name=userservice
+spring:
+  application:
+    name: user-service
+
+  config:
+    import: configserver:http://localhost:8888
 
 #spring.h2.console.enabled=true
 
@@ -17,7 +22,3 @@ spring.application.name=userservice
 #spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 
 
-spring.mongodb.uri= mongodb://localhost:27017/userdb
-spring.mongodb.database= userdb
-
-server.port=8081

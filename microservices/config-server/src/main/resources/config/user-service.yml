@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      uri: ${DB_URL}
+      database: ${DB_NAME}
+
+server:
+  port: 8081

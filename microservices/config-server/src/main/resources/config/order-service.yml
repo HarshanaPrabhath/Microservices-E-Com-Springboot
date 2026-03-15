@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    database: postgresql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8082
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+build:
+  name: Harshana E-Commerce
+  configuration: order-service-dev.yml
+  version: 1.0.0

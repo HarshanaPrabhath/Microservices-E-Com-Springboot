@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: config-server
+
+  profiles:
+    active: native
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///D:/Java/Microservices/Microservices-E-Com-Springboot/microservices/config-server/src/main/resources/config
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    root: debug
+
+server:
+  port: 8888
